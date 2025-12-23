@@ -15,9 +15,7 @@ overflow-x: hidden;
   flex: 1;
   display: flex;
   justify-content: center;
-  border-right: 10px solid white;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
+  border-right: 2px solid white;
 }
 
 .header-logo-container img {
