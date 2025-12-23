@@ -7,6 +7,7 @@
         margin:0;
     }   
     .homepage-banner{
+        padding: 3% 10%;
         width: 100%;
         height:500px;
         background-image: url("../../assets/images/bannerHomePage/banner.jpg");
@@ -17,32 +18,69 @@
         grid-template-columns: repeat(2,1fr);
     }
     .bannerLeft{
+        height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: 100px;
+        padding:0 20px;
         gap:20px;
-        background-color: #00000080;
+        background: white;
+        box-sizing: border-box;
+        flex-wrap: nowrap;
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 15px;
+   
     }
-    .bannerLeft h1,h2{
-        color:#FFFFFF;
+    .bannerLeft h1{
+        color:#252526;
+        font-weight: bold;
+    }
+    .bannerLeft p{
+        font-size:18px;
+        color:hsl(240, 1%, 28%);
+        font-style: italic;
+        font-weight: bold;
+    }
+    .bannerHome-btn{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        gap:20px;
+        align-items: center;
+    }
+    .btn.btn-primary{
+        color: white;
+        font-size: 24px;
+        padding: 10px 20px;
+        border-radius: 8px;
+         font-weight: bold;
+    }
+    .bannerHome-btn p{
+         color:#0D6EFD;
+         font-size: 24px;
+         font-style:normal;
+         margin-bottom:0px;
     }
     .bannerRight{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 500px;
+        height: 400px;
+        background: white;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
     }
     .video-wrapper{
         position: relative;
-        width: 95%;
+        width: 90%;
         height: 100%;
         }
 
     .videoBanner-frame{
         position: absolute;
-        top:2%;
+        top:10%;
         width: 100%;
-        height: 95%;
-        border-radius: 10px;
+        height:80%;
+        border-radius: 15px;
     }
