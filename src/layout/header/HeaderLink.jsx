@@ -11,14 +11,15 @@ export default function HeaderLinks() {
         <i className="bi bi-house"></i> Trang chủ
       </NavLink>
 
-      <NavLink
-        to="/teachers"
-        className={({ isActive }) =>
-          isActive ? "nav__item active" : "nav__item"
-        }
+      <a
+        href="https://www.hcmue.io.vn/home"
+        className="nav__item "
+        target="_blank"
+        rel="noopener noreferrer"
       >
-       <i className="bi bi-person-video3"></i> Giảng viên
-      </NavLink>
+        <i className="bi bi-person-video3" style ={{color:"white",fontWeight:"bold"}}></i> Giảng viên
+      </a>
+
 
       <NavLink
         to="courses"
