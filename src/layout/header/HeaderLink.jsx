@@ -30,14 +30,14 @@ export default function HeaderLinks() {
         <i className="bi bi-mortarboard"></i> Khóa học
       </NavLink>
       
-      <NavLink
-        to="documents"
-        className={({ isActive }) =>
-          isActive ? "nav__item active" : "nav__item"
-        }
+      <a
+        href="https://sites.google.com/hcmup.edu.vn/hienlth/home"
+        className="nav__item "
+        target="_blank"
+        rel="noopener noreferrer"
       >
-       <i className="bi bi-journal-text"></i> Tài liệu
-      </NavLink>
+        <i className="bi bi-person-video3" style ={{color:"white",fontWeight:"bold"}}></i> Tài liệu
+      </a>
       <NavLink
         to="contact"
         className={({ isActive }) =>

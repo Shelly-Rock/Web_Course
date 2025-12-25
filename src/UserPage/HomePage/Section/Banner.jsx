@@ -8,7 +8,7 @@ export default function Banner(){
                     <p>
                         <Typewriter
                         words={[
-                            "Xin chào, mình là Hiến - giảng viên lập trình với 8 năm kinh nghiệm. Mình chia sẻ kiến thức lập trình hoàn toàn miễn phí để giúp mọi người theo đuổi đam mê công nghệ."
+                            "Xin chào, mình là Hiến - giảng viên lập trình với 15 năm kinh nghiệm,7 năm làm Team Leader. Mình chia sẻ kiến thức lập trình hoàn toàn miễn phí để giúp mọi người theo đuổi đam mê công nghệ."
                         ]}
                         loop={1}
                         cursor
