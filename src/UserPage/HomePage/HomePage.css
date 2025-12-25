@@ -54,7 +54,8 @@
         font-size: 24px;
         padding: 10px 20px;
         border-radius: 8px;
-         font-weight: bold;
+        font-weight: bold;
+        background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
     }
     .bannerHome-btn p{
          color:#0D6EFD;
@@ -84,3 +85,126 @@
         height:80%;
         border-radius: 15px;
     }
+
+.programming-languages-section {
+    padding: 50px 10%;
+    background: white;
+    text-align: center;
+    color: white;
+}
+
+.programming-languages-section h2 { 
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.languages-scroll {
+    background:lch(13.06% 1.5 19.68);
+    padding: 20px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.languages-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    width: calc(200px * 16); /* Adjust based on number of items */
+}
+
+.language-item {
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 0 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.language-item:hover {
+    transform: rotateY(10deg) scale(1.05);
+}
+
+.language-item i {
+    font-size: 4rem; 
+    margin-bottom: 10px;
+    color: #fff;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+.language-item span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.homepage-learningPath{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+.homepage-learningPath h1, h2{
+    color:#252526;
+    font-weight: bold;
+}
+.timeline {
+  position: relative;
+  width: 60px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  background: #12002b; /* nền tím đậm */
+}
+
+/* Đường thẳng */
+.timeline-line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #8b5cf6,
+    #a78bfa,
+    #8b5cf6
+  );
+}
+
+/* Chấm tròn */
+.timeline-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #a78bfa;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.8);
+}
+
+/* Vị trí các chấm */
+.timeline-dot.top {
+  top: 0;
+}
+
+.timeline-dot.middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-dot.bottom {
+  bottom: 0;
+}

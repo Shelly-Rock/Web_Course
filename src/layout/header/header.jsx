@@ -1,6 +1,6 @@
-import { useState } from "react";
-import logoHeader from "../../assets/images/logoHeader.png";
+import { useState } from "react"; 
 import HeaderLinks from "./HeaderLink.jsx";
+import { Link } from "react-router-dom";
 import "./header.css";
 
 function Header() {
@@ -9,7 +9,7 @@ function Header() {
   return (
     <header className="header-container">
       <div className="header-logo-container">
-        <img src={logoHeader} alt="Logo" />
+        <Link to ="/"><h1 style ={{color: "white",padding:"20px",marginBottom:"0"}}>HIENLTH</h1></Link>
       </div>
       <div className={`header-nav ${openSearch ? "hide" : ""}`}>
         <HeaderLinks />

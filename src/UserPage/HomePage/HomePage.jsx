@@ -1,41 +1,27 @@
 import "./HomePage.css";
-import { Typewriter } from "react-simple-typewriter";
+import Banner from "./Section/Banner";
+import IconScroll from "./Section/IconScroll";
 export default function HomePage(){
     return(
-        <>
-            <div className ="homepage-container">
-                <div className ="homepage-banner">
-                    <div className ="bannerLeft">
-                        <h1>Học Lập Trình Miễn Phí Trên <span style ={{color:"rgba(212, 37, 37, 1)"}}>YouTube</span></h1>
-                        <p>
-                            <Typewriter
-                            words={[
-                                "Xin chào, mình là Hiến - giảng viên lập trình với 8 năm kinh nghiệm. Mình chia sẻ kiến thức lập trình hoàn toàn miễn phí để giúp mọi người theo đuổi đam mê công nghệ."
-                            ]}
-                            loop={1}
-                            cursor
-                            typeSpeed={40}
-                            deleteSpeed={20}
-                            delaySpeed={2000}
-                        />
-                        </p>
-                        <div className="bannerHome-btn">
-                            <button className="btn btn-primary">Bắt đầu học</button>
-                            <p>Miễn Phí 100%</p>
-                        </div>
-                       
+        <div>
+            <div className ="homepage-container"> 
+                <Banner />
+                <IconScroll />
+
+                <div className ="homepage-learningPath">
+                    <div className ="learningPath-title">
+                        <h1>Lộ trình học tập</h1>
+                        <h2>Học từ cơ bản đến nâng cao với lộ trình rõ ràng </h2>
                     </div>
-                    <div className="bannerRight">
-                        <div className="video-wrapper">
-                            <iframe
-                            src="https://www.youtube.com/embed/jruvMHTJLj4"
-                            className="videoBanner-frame"
-                            allowFullScreen
-                            ></iframe>
-                        </div>
+                    <div class="timeline">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-dot top"></div>
+                        <div class="timeline-dot middle"></div>
+                        <div class="timeline-dot bottom"></div>
                     </div>
+
                 </div>
             </div>
-        </>
+        </div>
     )
 }
