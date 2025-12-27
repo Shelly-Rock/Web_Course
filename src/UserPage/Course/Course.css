@@ -1,0 +1,53 @@
+.course-header{
+    padding:20px 0;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.course-page-container{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    padding: 0 10%;
+    gap: 100px;
+    margin-bottom:10px;
+}
+.course_sideBar{
+    border-style:none;
+    border-radius:10px;
+    display:flex; 
+    flex-direction: column;
+    flex:1;
+    background: lch(13.06% 1.5 19.68);
+}
+.sideBar-ListCourse{
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    background:
+        linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.4),
+        transparent 70%
+        ),
+    #4173b433;
+    display:flex;
+    flex-direction: column; 
+    padding: 20px;
+    border-radius:10px;
+    height:100%;
+}
+.listCourse-item{
+    display:flex;
+    align-items :center;
+    justify-content: center;
+    padding:20px;
+    /* border-bottom: 4px solid white; */
+}
+.course_video{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    flex:9;
+    gap:10px;
+}

@@ -55,6 +55,7 @@
       transparent 70%
     ),
     #4173b433;
+    border-radius:10px;
 }
 
 .nav__item.active {
@@ -81,6 +82,7 @@
       transparent 70%
     ),
     #4173b433;
+    border-radius:10px;
 }
 
 .bi-search {

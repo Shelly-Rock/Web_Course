@@ -1,5 +1,5 @@
 import LogoYoutube from "../../assets/images/Logo_Youtube.webp";
-import FooterImg from "../../assets/images/FooterImg.jpg";
+// import FooterImg from "../../assets/images/FooterImg.jpg";
 import "./footer.css";
 export default function Footer(){
     return(
