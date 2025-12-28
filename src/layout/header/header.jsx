@@ -9,7 +9,7 @@ function Header() {
   return (
     <header className="header-container">
       <div className="header-logo-container">
-        <a href ="https://www.youtube.com/@HIENLTH"><h1 style ={{color: "white",padding:"20px",marginBottom:"0",  textDecoration: "none !important"}}>HIENLTH</h1></a>
+        <a href ="https://www.youtube.com/@HIENLTH" style ={{textDecoration: "none"}}><h1 style ={{color: "white",padding:"20px",marginBottom:"0"}}>HIENLTH</h1></a>
       </div>
       <div className={`header-nav ${openSearch ? "hide" : ""}`}>
         <HeaderLinks />
