@@ -38,13 +38,16 @@
     border-radius:10px;
     height:100%;
 }
-.listCourse-item{
-    display:flex;
-    align-items :center;
+.listCourse-item {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    padding:20px;
+    padding: 20px;
+
     text-decoration: none !important;
+    color: inherit;
 }
+
 .course_video{
     display:grid;
     grid-template-columns: repeat(4,1fr);
