@@ -4,7 +4,7 @@ Mobile(620):fontsize :12px
 Mobile(420):fontsize :8px
 
 
-
+//background xam trang
 background:
     linear-gradient(
       120deg,
