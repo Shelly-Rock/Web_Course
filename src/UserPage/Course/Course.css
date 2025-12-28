@@ -43,7 +43,7 @@
     align-items :center;
     justify-content: center;
     padding:20px;
-    /* border-bottom: 4px solid white; */
+    text-decoration: none !important;
 }
 .course_video{
     display:grid;
