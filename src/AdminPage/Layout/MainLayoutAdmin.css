@@ -1,0 +1,31 @@
+.container-layoutAdmin{
+    width:100%;
+}
+.mainLayoutAdmin{
+    display:flex;
+    margin:0;
+    padding:0;
+}
+.container-sidebar{
+    padding:20px 0;
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    flex:1;
+    gap:20px;
+    border-right:2px solid white;
+    background: lch(13.06% 1.5 19.68);
+    font-weight: bold;
+
+}
+.sidebarAdmin-Items{
+    color:white;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    gap:10px;
+}
+.container-mainAdmin{
+    flex:9;
+    padding:20px;
+}

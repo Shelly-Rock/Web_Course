@@ -1,0 +1,17 @@
+    .container-headerAdmin{
+        padding:20px;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        background:lch(13.06% 1.5 19.68);
+        border-bottom:2px solid white;
+        
+    }
+    .headerAdmin-left{
+        color:white;
+    }
+    .headerAdmin-right{
+        display:flex;
+        gap:20px;
+        color:white;
+    }

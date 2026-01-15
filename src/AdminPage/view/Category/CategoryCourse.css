@@ -1,0 +1,33 @@
+.contain-categoryCourse{
+    background: lch(13.06% 1.5 19.68);
+    min-height:50vh;
+    padding:20px;
+    border-radius: 10px;
+}
+.contain-categoryCourse p{
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight:bold;
+}
+.btn-categoryCourse{
+    display: flex;
+    justify-content:space-between;
+}
+.btn-categoryItem{
+    border-style:none;
+    background-color: transparent;
+    color:white;
+    font-weight:bold;
+    transition: transform 0.3s ease;
+    font-size: 26px;
+}
+.btn-categoryItem:hover{
+     transform: scale(1.1);
+}
+.categoryCourse-listItem{
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top:20px;
+}

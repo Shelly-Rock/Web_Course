@@ -1,0 +1,31 @@
+.form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* nền tối mờ */
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 999;
+}
+.form-overlay form{
+    position: relative;
+    background-color:white;
+    min-width:400px;
+    height:auto;
+    padding:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+    border-radius: 10px;
+}
+.btn-close-form{
+    position: absolute;
+    top:2%;
+    right:2%;
+    border-style:none;
+    font-size:20px;
+}
