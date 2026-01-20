@@ -13,3 +13,5 @@ background:
       transparent 70%
     ),
     #4173b433;
+
+    https://chatgpt.com/c/696f1fe4-62f4-8324-9b2f-ca105d4d3dec

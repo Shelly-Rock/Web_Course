@@ -1,16 +1,23 @@
 import { useState } from "react";
 import "./formAdd.css";
+import CategoryService from "../../../../../server/services/CategoryService";
+import {toast} from "react-toastify";
 export default function AddForm({onClose}) {
   const [courseName, setCourseName] = useState("");
-  
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault(); 
+    try{
+      await CategoryService.addCategory({categoryName:courseName});
+      toast.success("Thêm thành công !");
+      setCourseName("");
+    }catch(error){
+      toast.error("Thêm thất bại" + error);
+    }
+  } 
 
   return (
     <div className="form-overlay">
-      <form>
-           {/* <form onSubmit={handleSubmit}></form> */}
+      <form onSubmit={handleSubmit}>
         <button
           type="button"
           className="btn-close-form"
