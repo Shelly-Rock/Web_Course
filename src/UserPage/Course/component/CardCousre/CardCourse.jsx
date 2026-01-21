@@ -1,5 +1,5 @@
 import "./CardCourse.css";
-import CourseCardImg from  "../../assets/images/CourseCard.jpg"; 
+import CourseCardImg from  "../../../../assets/images/CourseCard.jpg"; 
 export default function CardCourse(){
     return(
         <>

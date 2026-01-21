@@ -1,5 +1,5 @@
 import "./Course.css";
-import CardCourse from "../../component/CardCousre/CardCourse.jsx";
+import CardCourse from "./component/CardCousre/CardCourse.jsx";
 import { Link } from 'react-router-dom';
 import CategoryService from "../../server/services/CategoryService.js";
 import { useState,useEffect } from "react";
