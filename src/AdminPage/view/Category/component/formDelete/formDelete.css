@@ -1,0 +1,47 @@
+.form-deleted{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding:20px;
+    border-radius: 10px;
+    width:25%;
+    aspect-ratio: 4/3;
+    height: auto;
+}
+.form-deleted p{
+    font-size:18px;
+    font-weight: bold;
+}
+.btn-deleted{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    gap:10%;
+    padding-top:10%;
+}
+.btn-cancle{
+    padding:10px;
+    font-size:18px;
+    color:white !important;
+    background-color: green;
+    border-radius: 10px;
+    flex:5;
+    border-style: none;
+}
+.btn-ok{
+    padding:10px;
+    font-size:18px;
+    color:white;
+    background-color: red;
+    border-radius: 10px;
+    flex:5;
+    border-style: none;
+}
+.btn-cancle:hover{
+    color:#252526 !important;
+} 
+.btn-ok:hover{
+    color:#252526;
+}

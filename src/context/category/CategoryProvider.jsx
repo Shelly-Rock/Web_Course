@@ -22,10 +22,18 @@ export function CategoryProvider({ children }) {
       console.error(error);
     }
   };
+  const deleteCategory = async (data) => {
+    try{
+      await CategoryService.deleted(data);
+      await getCategories();
+    }catch(error){
+      console.error(error);
+    }
+  }
 
   useEffect(() => { (async () => { await getCategories(); })(); }, [getCategories]);
   return (
-    <CategoryContext.Provider value={{ categories, getCategories, addCategory }}>
+    <CategoryContext.Provider value={{ categories, getCategories, addCategory,deleteCategory }}>
       {children}
     </CategoryContext.Provider>
   );

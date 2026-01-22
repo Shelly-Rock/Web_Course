@@ -2,16 +2,19 @@ import "./CategoryCourse.css";
 import AddForm from "./component/formAdd/formAdd.jsx";
 import useCategory from "../../../context/category/useCategory.js";
 import  useToggle from "../../../hooks/useToggle.js";
+import FormDeleted from "./component/formDelete/formDelete.jsx";
 export default function CategoryCourse (){
-    const handleForm = useToggle();
+    const handleFormAdd = useToggle();
+    const handleFormDeleted = useToggle();
     const { categories } = useCategory();
     return(
         <>
-           {handleForm.open && <AddForm onClose={handleForm.handleClose}/>}
+           {handleFormAdd.open && <AddForm onClose={handleFormAdd.handleClose} />}
+           {handleFormDeleted.open && <FormDeleted onClose={handleFormDeleted.handleClose} />}
            <div className ="contain-categoryCourse">
             <div className ="btn-categoryCourse">
                 <p>Danh Sách Khóa Học</p>
-                <button className="btn-categoryItem" onClick = {handleForm.handleOpen}>+</button> 
+                <button className="btn-categoryItem" onClick = {handleFormAdd.handleOpen}>+</button> 
             </div>
             <div className ="categoryCourse-listItem">
                 <table>
@@ -33,8 +36,8 @@ export default function CategoryCourse (){
                                     <td>
                                         <button className="btn btn-sm btn-warning" style={{marginRight:"10px"}}>
                                             <i className="bi bi-pencil-square"></i> Sửa
-                                        </button>
-                                        <button className="btn btn-sm btn-danger">
+                                        </button> 
+                                        <button className="btn btn-sm btn-danger" onClick={handleFormDeleted.handleOpen}>
                                             <i className="bi bi-trash"></i> Xóa
                                         </button>
                                     </td>
