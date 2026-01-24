@@ -1,11 +1,12 @@
 import "./formDelete.css";
 import useCategory from "../../../../../context/category/useCategory";
 import {toast} from "react-toastify";
-export default function FormDeleted({onClose}){
+export default function FormDeleted({onClose,category}){
     const {deleteCategory} = useCategory();
-    const handleOnClickOK = async () => {
+    const handleOnClickOK = async (e) => {
+        e.preventDefault();
         try{
-            await deleteCategory(); 
+            await deleteCategory(category.id); 
             toast.success("Xóa thành công !");
             onClose();
         }catch(error){
@@ -16,7 +17,7 @@ export default function FormDeleted({onClose}){
     return(
         <div className ="form-overlay">
             <div className ="form-deleted">
-                <p>Bạn có chắc chắn muốn xóa !</p>
+                <p>Bạn có chắc chắn muốn xóa {category.categoryName} không!</p>
                 <div className ="btn-deleted">
                     <button className ="btn-cancle" onClick = {onClose}>Cancle</button>
                     <button className="btn-ok" onClick ={handleOnClickOK}>OK</button>

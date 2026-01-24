@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { CategoryContext } from "./CategoryContext";
 import CategoryService from "../../server/services/CategoryService";
+import { doc } from "firebase/firestore";
 
 export function CategoryProvider({ children }) {
   const [categories, setCategories] = useState([]);
-
+  //hàm trả về đanh sấch categories
   const getCategories = useCallback(async () => {
     try {
       const data = await CategoryService.getAllCategories();
@@ -13,25 +14,26 @@ export function CategoryProvider({ children }) {
       console.error(error);
     }
   }, []);
-
+  //hàm thêm một category 
   const addCategory = async (data) => {
-    try {
-      await CategoryService.addCategory(data);
-      await getCategories();
-    } catch (error) {
-      console.error(error);
-    }
+    const docRef = await CategoryService.addCategory(data);
+    setCategories(prev => [
+      { id: docRef.id, ...data },
+      ...prev
+    ]);
   };
-  const deleteCategory = async (data) => {
-    try{
-      await CategoryService.deleted(data);
-      await getCategories();
-    }catch(error){
-      console.error(error);
-    }
+  //hàm xóa một category
+  const deleteCategory = async (id) => {
+    await CategoryService.deleted(id);
+    setCategories(prev => 
+      prev.filter(category => category.id  !== id))
   }
 
-  useEffect(() => { (async () => { await getCategories(); })(); }, [getCategories]);
+  useEffect(() => { (
+    async () => { 
+      await getCategories(); })();
+    },[getCategories]);
+
   return (
     <CategoryContext.Provider value={{ categories, getCategories, addCategory,deleteCategory }}>
       {children}

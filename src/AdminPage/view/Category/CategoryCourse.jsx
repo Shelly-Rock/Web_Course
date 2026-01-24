@@ -3,14 +3,16 @@ import AddForm from "./component/formAdd/formAdd.jsx";
 import useCategory from "../../../context/category/useCategory.js";
 import  useToggle from "../../../hooks/useToggle.js";
 import FormDeleted from "./component/formDelete/formDelete.jsx";
+import {useState} from "react";
 export default function CategoryCourse (){
+    const [data,setData] = useState({});
     const handleFormAdd = useToggle();
     const handleFormDeleted = useToggle();
     const { categories } = useCategory();
     return(
         <>
            {handleFormAdd.open && <AddForm onClose={handleFormAdd.handleClose} />}
-           {handleFormDeleted.open && <FormDeleted onClose={handleFormDeleted.handleClose} />}
+           {handleFormDeleted.open && <FormDeleted onClose={handleFormDeleted.handleClose} category = {data} />}
            <div className ="contain-categoryCourse">
             <div className ="btn-categoryCourse">
                 <p>Danh Sách Khóa Học</p>
@@ -37,7 +39,7 @@ export default function CategoryCourse (){
                                         <button className="btn btn-sm btn-warning" style={{marginRight:"10px"}}>
                                             <i className="bi bi-pencil-square"></i> Sửa
                                         </button> 
-                                        <button className="btn btn-sm btn-danger" onClick={handleFormDeleted.handleOpen}>
+                                        <button className="btn btn-sm btn-danger" onClick={() => {setData(item); handleFormDeleted.handleOpen()}}>
                                             <i className="bi bi-trash"></i> Xóa
                                         </button>
                                     </td>
