@@ -1,42 +1,68 @@
-import { useCallback, useEffect, useState } from "react";
-import { CategoryContext } from "./CategoryContext";
-import CategoryService from "../../server/services/CategoryService";
-import { doc } from "firebase/firestore";
+  import { useCallback, useEffect, useState } from "react";
+  import { CategoryContext } from "./CategoryContext";
+  import CategoryService from "../../server/services/CategoryService";
+  export function CategoryProvider({ children }) {
+    const [categories, setCategories] = useState([]);
+    //hàm trả về đanh sấch categories
+    const getCategories = useCallback(async () => {
+      try {
+        const data = await CategoryService.getAllCategories();
+        setCategories(data);
+      } catch (error) {
+        console.error(error);
+      }
+    }, []);
 
-export function CategoryProvider({ children }) {
-  const [categories, setCategories] = useState([]);
-  //hàm trả về đanh sấch categories
-  const getCategories = useCallback(async () => {
-    try {
-      const data = await CategoryService.getAllCategories();
-      setCategories(data);
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
-  //hàm thêm một category 
-  const addCategory = async (data) => {
-    const docRef = await CategoryService.addCategory(data);
-    setCategories(prev => [
-      { id: docRef.id, ...data },
-      ...prev
-    ]);
-  };
-  //hàm xóa một category
-  const deleteCategory = async (id) => {
-    await CategoryService.deleted(id);
-    setCategories(prev => 
-      prev.filter(category => category.id  !== id))
-  }
 
-  useEffect(() => { (
-    async () => { 
-      await getCategories(); })();
+    //hàm tìm kiếm theo tên
+    const getCategoryByName = useCallback(async (categoryName) =>{
+      if (!categoryName.trim()) {
+          await getCategories();
+          return;
+      }
+      try{
+        const data = await CategoryService.getCategoryByName(categoryName);
+        if(!data){
+          throw new Error("Không tìm thấy category");
+        }else{
+          setCategories(data);
+        }
+      }catch(error){
+        console.log(error);
+      }
     },[getCategories]);
 
-  return (
-    <CategoryContext.Provider value={{ categories, getCategories, addCategory,deleteCategory }}>
-      {children}
-    </CategoryContext.Provider>
-  );
-}
+
+    //hàm thêm một category 
+    const addCategory = async (data) => {
+       await CategoryService.addCategory(data);
+       await getCategories();
+    };
+
+
+    //hàm xóa một category
+    const deleteCategory = async (id) => {
+      await CategoryService.deleted(id);
+      setCategories(prev => 
+        prev.filter(category => category.id  !== id))
+    }
+
+
+    //hàm update
+    const updateCategory = async (data) => {
+      await CategoryService.update(data);
+      await getCategories();
+    };
+
+    
+    useEffect(() => { (
+      async () => { 
+        await getCategories(); })();
+      },[getCategories]);
+
+    return (
+      <CategoryContext.Provider value={{ categories, getCategories, addCategory,deleteCategory,updateCategory,getCategoryByName }}>
+        {children}
+      </CategoryContext.Provider>
+    );
+  }

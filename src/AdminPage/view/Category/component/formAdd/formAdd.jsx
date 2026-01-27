@@ -1,6 +1,5 @@
   import { useState } from "react";
   import "./formAdd.css";
-  import CategoryService from "../../../../../server/services/CategoryService";
   import {toast} from "react-toastify";
   import useCategory from "../../../../../context/category/useCategory.js";
   export default function AddForm({onClose}) {
@@ -9,11 +8,15 @@
     const handleSubmit = async (e) => {
       e.preventDefault(); 
       try{
-        await addCategory({categoryName:courseName});
-        toast.success("Thêm thành công !");
-        setCourseName("");
+        if(!courseName){
+          toast.error('Chưa nhập!')
+        }else{
+          await addCategory({categoryName:courseName.trim().toUpperCase()});
+          toast.success("Thêm thành công !");
+          setCourseName("");
+        }
       }catch(error){
-        toast.error("Thêm thất bại" + error);
+        toast.error(error.message || "Có lỗi!");
       }
     } 
     return (

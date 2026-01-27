@@ -1,0 +1,27 @@
+.container-search{
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 10px;
+    width:95%;
+}
+.container-search input{
+      background-color: transparent;
+      border-style:none;
+      color:#252526;
+      width: 90%;
+}
+.container-search button{
+     background-color: transparent;
+     cursor: pointer;
+     border-style:none;
+}
+.container-search button i{
+     color:#252526;
+}
+.container-search input:focus{
+     border: none;
+     outline: none; 
+}

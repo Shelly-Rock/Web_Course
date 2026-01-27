@@ -19,8 +19,8 @@ export default function FormDeleted({onClose,category}){
             <div className ="form-deleted">
                 <p>Bạn có chắc chắn muốn xóa {category.categoryName} không!</p>
                 <div className ="btn-deleted">
-                    <button className ="btn-cancle" onClick = {onClose}>Cancle</button>
                     <button className="btn-ok" onClick ={handleOnClickOK}>OK</button>
+                    <button className ="btn-cancle" onClick = {onClose}>Cancle</button>
                 </div>
             </div>
         </div>

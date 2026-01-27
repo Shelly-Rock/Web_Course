@@ -1,5 +1,5 @@
 import { useState,useCallback } from "react";
-export default function useToogle(state=false){
+export default function useToggle(state=false){
     const [open,setOpen] = useState(state);
     const handleOpen  =useCallback(()=>{
         setOpen(true)

@@ -6,13 +6,14 @@
     background-color: white;
     padding:20px;
     border-radius: 10px;
-    width:25%;
+    width:max-content;
     aspect-ratio: 4/3;
     height: auto;
 }
 .form-deleted p{
     font-size:18px;
     font-weight: bold;
+    white-space:nowrap;
 }
 .btn-deleted{
     display:flex;
@@ -25,7 +26,7 @@
     padding:10px;
     font-size:18px;
     color:white !important;
-    background-color: green;
+    background-color: #198754;
     border-radius: 10px;
     flex:5;
     border-style: none;
@@ -34,7 +35,7 @@
     padding:10px;
     font-size:18px;
     color:white;
-    background-color: red;
+    background-color: #dc3545;
     border-radius: 10px;
     flex:5;
     border-style: none;
