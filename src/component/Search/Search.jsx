@@ -22,4 +22,4 @@ export default function Search({
       </button>
     </div>
   );
-}
+} 

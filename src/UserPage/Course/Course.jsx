@@ -1,52 +1,39 @@
 import "./Course.css";
 import CardCourse from "./component/CardCousre/CardCourse.jsx";
 import { Link } from 'react-router-dom';
-import CategoryService from "../../server/services/CategoryService.js";
-import { useState,useEffect } from "react";
+import useCategory from "../../context/category/useCategory.js";
 export default function Course(){
-    const [categories, setCategories] = useState([]);
-        useEffect(() => {
-            const fetchCategories = async () => {
-            const data = await CategoryService.getAllCategories();
-            setCategories(data);
-            };
-
-            fetchCategories();
-        }, []);
+    const {categories} = useCategory();
     return(
-        <>
-            <div className ="course-header">
-                <h1>Danh Sách Các Khóa Học</h1>
-            </div>
-                <div className ="course-page-container">
-                    <div className ="course_sideBar">
-                        <div className ="sideBar-ListCourse">
-                           {categories.map(category => (
-                            <Link
+            <div className ="container-course">   
+                 <div className ="course-header">
+                    <div className="course-header__icon">
+                        <i className="fab fa-html5"></i>
+                        <i className="fab fa-css3-alt"></i>
+                        <i className="fab fa-js-square"></i>
+                    </div>
+                    <div className="course-header__title">
+                        <h1>Khám Phá Khóa Học Của Bạn</h1>
+                        <h3>Các video chất lượng từ giảng viên đại học có kinh nghiệm</h3>
+                        <button className="btn-startStudy">Bắt đầu học</button>
+                    </div>
+                </div>     
+                <div className="course-main">   
+                    <div className="category-course">
+                        {categories.map(category => (
+                            <Link   
                                 key={category.id}
                                 to={`/courses?category=${category.id}`}
-                                className="listCourse-item"
+                                className="listCategories-item"
                             >
                                 {category.categoryName}
                             </Link>
                             ))}
-                        </div>
                     </div>
-                    <div className ="course_video">
-                        <CardCourse/>
-                        <CardCourse/>
-                        <CardCourse/>
-                        <CardCourse/>
-                        <CardCourse/>
-                        <CardCourse/>
-                        <CardCourse/>
-                        <CardCourse/>
-                        <CardCourse/>
-                        <CardCourse/>
-                        <CardCourse/>
-                        <CardCourse/>
+                    <div className ="course-video">
+                            <CardCourse/>
                     </div>
-                </div>
-        </>
+                </div>            
+            </div>
     )
 }
