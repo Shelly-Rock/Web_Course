@@ -14,6 +14,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  border-right: 2px solid white;
 }
 /* NAV */
 .header-nav {
@@ -46,10 +47,8 @@
   text-decoration: none !important;
 }
 
-
-
 .nav__item.active {
-   box-shadow: inset 0 -2px 0 white,
+  box-shadow: inset 0 -2px 0 white,
               inset 0 -6px 6px -6px #ffffffd8;
 }
 
@@ -87,7 +86,7 @@
 
   transform: translateX(120%);
   opacity: 0;
-  transition: transform 5s ease;
+  transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
 .header-search.show {
@@ -99,7 +98,8 @@
 .header-search input {
   border: none;
   outline: none;
-  flex:
+  flex: 1;
+  font-size: 16px;
 }
 
 .close-search {
