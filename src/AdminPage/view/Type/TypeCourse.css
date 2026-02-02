@@ -1,0 +1,43 @@
+.container-typeCourse{
+    background: lch(13.06% 1.5 19.68);
+    min-height:50vh;
+    padding:20px;
+    border-radius: 10px;
+    width:100%;
+}
+.typeCourse-header{
+    padding:0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;   
+}
+.typeCourse-header p{
+    color:white;
+    font-size: 24px;
+    font-weight: bold;
+    width:50%;
+    line-height: 1.5;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.typeCourse-header__btn{
+    display: flex;
+    width:50%;
+    justify-content: flex-end;
+}
+.typeCourse-header__btn p{
+      font-size: 26px;
+      cursor: pointer;
+      width: 5%;
+      text-align: end;
+      line-height: 1.5;
+      margin:0;
+      padding: 0;
+}
+.typeCourse-main{
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top:20px;
+}

@@ -9,10 +9,13 @@
 .container-sidebar{
     padding:20px 0;
     min-height: 100vh;
+    min-width:190px;
     display:flex;
+    width:max-content;
     flex-direction: column;
     flex:1;
     gap:20px;
+    padding:10px;
     border-right:2px solid white;
     background: lch(13.06% 1.5 19.68);
     font-weight: bold;
@@ -20,10 +23,19 @@
 }
 .sidebarAdmin-Items{
     color:white;
-    width:100%;
+    width:max-content;
     display: flex;
-    justify-content: center;
+    min-width:160px;
+    justify-content: flex-start;
     gap:10px;
+    font-size:16px;
+    padding:0 10px;
+    transition: transform 0.3s ease;
+}
+.sidebarAdmin-Items:hover{
+    transform: scale(1) !important;
+    background-color:white;
+    color:#252526; 
 }
 .container-mainAdmin{
     flex:9;

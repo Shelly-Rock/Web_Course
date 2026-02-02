@@ -7,6 +7,7 @@ import Contact from "./UserPage/Contact/Contact.jsx";
 import  MainLayoutAdmin from "./AdminPage/Layout/MainLayoutAdmin.jsx";
 import HomePageAdmin from "./AdminPage/view/HomeAdmin.jsx";
 import CategoryCourse from "./AdminPage/view/Category/CategoryCourse.jsx";
+import TypeCourse from "./AdminPage/view/Type/TypeCourse.jsx";
 export default function Router() {
     return (
     <Routes>
@@ -20,6 +21,7 @@ export default function Router() {
           <Route path="/admin" element ={<MainLayoutAdmin/>}>
             <Route index element ={<HomePageAdmin/>}></Route>
             <Route path="mon-hoc" element={<CategoryCourse/>}/>
+            <Route path ="type-course" element= {<TypeCourse/>}/>
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

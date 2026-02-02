@@ -3,14 +3,16 @@
     flex-direction: column;
     width:100%;
     height:fit-content;
-    background: lch(13.06% 1.5 19.68);
     border-radius:10px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.cardCourse:hover{
+    box-shadow: 0 4px 12px white;
+    background-color: rgba(255, 255, 255, 0.08);
 }
 .course-img{
     width:100%;
-    aspect-ratio: 4/3;
+    aspect-ratio: 4/2;
     height:auto;
 }
 .course-img img{
@@ -21,21 +23,8 @@
     object-fit: cover;
 }
 .course-detail{
-    background:
-        linear-gradient(
-        120deg,
-        transparent 30%,
-        rgba(255, 255, 255, 0.4),
-        transparent 70%
-        ),
-        #4173b433;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
     display:flex;
-    justify-content: center;
-    align-items:center;
-    padding: 20px;
+    padding: 10px;
     color:white;
-    font-size:18px;
-    font-weight:bold;
+    font-size:16px;
 }
