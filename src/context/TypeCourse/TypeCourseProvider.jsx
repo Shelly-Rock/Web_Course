@@ -19,13 +19,29 @@ export default function TypeCourseProvider({children}){
         await TypeCourseService.updateTypeCourse(data);
         await getAllTypeCourse();
     }
+    const searchTypeCourse = useCallback(async (typeName) => {
+    if (!typeName.trim()) {
+        await getAllTypeCourse();
+        return;
+    }
+    try {
+        const data = await TypeCourseService.searchTypeCourse(typeName);
+        if (!data) {
+        throw new Error("Không tìm thấy type");
+        }
+        setTypeCourses(data);
+    } catch (error) {
+        console.log(error);
+    }
+    }, [getAllTypeCourse]);
+
     useEffect(() =>{(
         async () =>{
             await getAllTypeCourse();
         }
     )()},[getAllTypeCourse])
     return(
-        <TypeCourseContext.Provider value={{typeCourses,getAllTypeCourse,addTypeCourse,deleteTypeCourse,updateTypeCourse}}>
+        <TypeCourseContext.Provider value={{typeCourses,getAllTypeCourse,addTypeCourse,deleteTypeCourse,updateTypeCourse,searchTypeCourse}}>
             {children}
         </TypeCourseContext.Provider>
     )

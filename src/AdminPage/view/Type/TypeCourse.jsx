@@ -1,17 +1,18 @@
 import Search from "../../../component/Search/Search";
 import useTypeCourse from "../../../context/TypeCourse/useTypeCourse.js";
-import FormAddTypeCourse from "./component/FormAddTypeCourse.jsx";
+import FormAddTypeCourse from "./Form/FormAddTypeCourse.jsx";
 import useToggle from "../../../hooks/useToggle.js";
-import FormDeleteTypeCourse from "./component/FormDeleteTypeCourse.jsx";
-import FormUpdateTypeCourse from "./component/FormUpdateTypeCourse.jsx";
+import FormDeleteTypeCourse from "./Form/FormDeleteTypeCourse.jsx";
+import FormUpdateTypeCourse from "./Form/FormUpdateTypeCourse.jsx";
 import { useState } from "react";
 import "./TypeCourse.css";
 export default function TypeCourse(){
-    const{typeCourses} = useTypeCourse();
+    const{typeCourses,searchTypeCourse} = useTypeCourse();
     const handleFormAdd = useToggle();
     const handleFormDelete = useToggle();
     const handleFormUpdate = useToggle();
     const [data,setData] = useState(null);
+    const [keyword, setKeyword] = useState("");
     return(
         <>
         {handleFormAdd.open && <FormAddTypeCourse onClose ={handleFormAdd.handleClose}/>}
@@ -21,7 +22,7 @@ export default function TypeCourse(){
             <div className  ="typeCourse-header">
                  <p>Danh sách Loại Khóa Học</p>
                  <div className="typeCourse-header__btn">
-                    <Search/>
+                    <Search value ={keyword} onChange={setKeyword} onSubmit={searchTypeCourse}/>
                     <p onClick={handleFormAdd.handleOpen}>+</p>
                  </div>
             </div>
@@ -37,7 +38,13 @@ export default function TypeCourse(){
                         </tr>
                     </thead>
                     <tbody>
-                        {typeCourses.map((item,index)=>(
+                        {typeCourses.length === 0 ?
+                        (<tr style={{background:"transparent"}}>
+                                <td className="data-null">
+                                    Không có dữ liệu
+                                </td>
+                        </tr>)
+                        :(typeCourses.map((item,index)=>(
                             <tr key ={item.id || index}>
                                 <td>{index}</td>
                                 <td>{item.typeName}</td>
@@ -45,7 +52,7 @@ export default function TypeCourse(){
                                 <td>{item.updatedAt?.toDate().toLocaleDateString()}</td>
                                  <td>
                                         <button className="btn btn-sm btn-warning" style={{marginRight:"10px"}} 
-                                                                                   onClick ={() => {setData(item);handleFormUpdate.handleOpen()}}>
+                                                onClick ={() => {setData(item);handleFormUpdate.handleOpen()}}>
                                             <i className="bi bi-pencil-square"></i> Sửa
                                         </button> 
                                         <button className="btn btn-sm btn-danger" onClick ={() =>{setData(item);handleFormDelete.handleOpen()}}>
@@ -53,7 +60,7 @@ export default function TypeCourse(){
                                         </button>
                                     </td>
                             </tr>
-                        ))}
+                        )))}
                     </tbody>
                 </table>
             </div>

@@ -3,9 +3,11 @@ import CardCourse from "./component/CardCousre/CardCourse.jsx";
 import { Link } from 'react-router-dom';
 import {useState} from "react";
 import useCategory from "../../context/category/useCategory.js";
+import useTypeCourse from "../../context/TypeCourse/useTypeCourse.js";
 import useScroll from "../../hooks/useScoll.js";
 export default function Course(){
     const {categories} = useCategory();
+    const {typeCourses} = useTypeCourse();
     const {show,ref} = useScroll();
     const [hideHero, setHideHero] = useState(false);
     const handleOnClick =() =>{
@@ -37,11 +39,9 @@ export default function Course(){
 
                     <div className ="course-main__content">
                         <div className ="course-main__content-sidebar">
-                            <p>Frontend</p>
-                            <p>Backend</p>
-                            <p>DataBase</p>
+                            {typeCourses.map((item)=>(<p><i className="fas fa-circle"></i> {item.typeName}</p>))}
                         </div>
-                        <div className ="course-main__content-cardVideo">
+                        <div className ="course-main__content-cardVideo">   
                             <CardCourse/>
                             <CardCourse/>
                             <CardCourse/>
